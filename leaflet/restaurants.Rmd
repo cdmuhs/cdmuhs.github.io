@@ -1,0 +1,41 @@
+---
+title: "Restaurants"
+author: "Chris Muhs"
+date: "January 21, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The map below shows five of my favorite places to eat.
+
+```{r, echo=FALSE}
+library(leaflet)
+# data
+mydf <- data.frame(
+    lat = c(45.5629,
+            45.5829,
+            45.5592,
+            45.5903,
+            45.5512),
+    lng = c(-122.6482,
+            -122.6873,
+            -122.6513,
+            -122.7552,
+            -122.6752)
+)
+mynames = c("<a href = “http://podnahspit.com”>podnah’s pit</a>",
+            "<a href = “http://www.finopdx.com/”>pizza fino</a>",
+            "<a href = “http://bamboosushi.com/”>bamboo sushi</a>",
+            "tienda santa cruz",
+            "mee-sen")
+
+# map
+mydf %>% 
+    leaflet() %>%
+    setView(lat = 45.575, lng = -122.7, zoom = 12) %>%
+    addProviderTiles(providers$OpenStreetMap.BlackAndWhite) %>%
+    addMarkers(popup = mynames) # a vector
+```
