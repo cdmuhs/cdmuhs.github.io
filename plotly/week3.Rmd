@@ -13,10 +13,5 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r fig.align='center', out.width="90%", fig.asp = 0.7, message = FALSE}
 library(plotly)
-set.seed(2016-07-21)
-temp <- rnorm(100, mean = 30, sd = 5)
-pressue <- rnorm(100)
-dtime <- 1:100
-plot_ly(x = ~temp, y = ~pressue, z = ~dtime,
-        type = "scatter3d", color = ~temp)
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", color = ~factor(cyl))
 ```
