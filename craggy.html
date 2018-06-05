@@ -34,11 +34,10 @@
           <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
             <div class="sidebar-content">
               <h1 class="sidebar-heading"> <a href="index.html">Chris Muhs</a></h1>
-              <p class="sidebar-p">Here is some info about me.</p>
-              <p class="sidebar-p">From Philadelphia, living in Portland.</p>
+              <p class="sidebar-p">From Philadelphia, living in Portland. </p>
               <ul class="sidebar-menu"> 
                 <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="about.html">About</a></li>
+                <li><a href="about.html">About</a></li>
               </ul>
               <p class="social">
                   <a href="https://github.com/cdmuhs" data-animate-hover="pulse" class="external github"><i class="fa fa-github"></i>
@@ -53,61 +52,67 @@
               <div class="copyright">
                 <p class="credit">&copy;2018 Chris Muhs</p>
                 
-                
               </div>
             </div>
           </div>
           <!--   *** SIDEBAR END ***  -->
           <!--   *** DETAIL ***-->
           <div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+            <!--  ** SMALL NAVBAR STUFF ** -->
             <div class="small-navbar visible-xs">
               <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
-              <h1 class="small-navbar-heading"><a href="index.html">About Chris Muhs</a></h1>
+              <h1 class="small-navbar-heading"> <a href="index.html">Project Detail</a></h1>
             </div>
             <div class="row">
               <div class="col-lg-8">
                 <div class="content-column-content">
-                  <h2>About me</h2>
-                  <p class="lead">I am a transportation professional with 5 years of engineering experience and a knack for data. I like digging into data, finding insights, and developing interesting and effective ways to communicate results to teammates, stakeholders, and decision makers.</p>
-                  <div class="row">
+                  <h2>'cRaggy' BIKETOWN Data Viz</h2>
                     
-                    <div class="col-md-4 col-md-offset-4">
-                      <p><img src="img/about.jpg" alt="This is me" class="image img-circle img-responsive"></p>
-                    </div>
-                  </div>
+                  <h3>Summary</h3>
+                    <p>
+                      This post is based on my entry to the “cRaggy” data viz competition at the <a href="http://cascadiarconf.com">2018 Cascadia Rconf</a>. 
+                      The assignment was to use two years of trip data from the BIKETOWN bike share system in Portland and submit a visualization that explores some aspect of the data set. 
+                      There are about 60,000 trips in <a href="https://s3.amazonaws.com/biketown-tripdata-public/BiketownPublicTripData201804.zip">the data set</a>, with attributes including timestamp, starting and ending geographic coordinates, starting and ending BIKETOWN station, type of payment plan used, trip duration, and distance.
+                    </p>
+                    <p>
+                      I was interested in where riders were taking the bikes (trip ends) and how that varies by some different criteria. 
+                      My question was:
+                    </p>
+                    <p class="lead">
+                      How do the locations of trip ends vary by trip distance?
+                    </p>
+                    <p>
+                      I thought that maybe commuters were taking longer trips to reach destinations downtown than other users like tourists taking the bikes to attractions like waterfront park or shops and restaurants in commercial districts on the east side of the river. 
+                    </p> 
+                    <p>                      
+                      Looking at the distribution of trip distances, It was appropriate to break the trips at lengths of <1 mile, <2 miles, and >2 miles.
+                    </p>
+                          <div id="main-slider">
+                              <div class="item"><img alt="" src="img/portfolio/craggy_hist.png" class="img-responsive"></div>
+                              <div class="item"><img alt="" src="img/portfolio/craggy_quantiles.png" class="img-responsive"></div>
+                          </div>
+                    <p>
+                      I had never used the ggmap package in R to visualize spatial data, so I took this opportunity to do so. It is a huge improvement over some of the other spatial data packages I tried out a few years ago. 
+                      The plot I made uses a 2d density plot and the facet_wrap function to view the trip ends by different bins of trip distance. You can see the plot below.
+                    </p>  
+                      <div>
+                          <div class="item"><a href="img/portfolio/craggy_main.png"><img alt="" src="img/portfolio/craggy_main.png" class="img-responsive"></a></div>
+                      </div>
+                    <p>
+                      Some of the shortest trips end in NW Portland, likely coming from downtown. The 1 to 2 mile trip ends appear dispersed around downtown. The longer trips have a notable cluster at the SW waterfront park fountain. I bet a lot of these are people who ride the ~3 mile waterfront loop along the SW waterfront and Eastbank Esplanade. 
+                    </p>
+                 
+                  <h3>Languages/tools</h3>
+                  <ul>
+                      <li>R</li>                      
+                  </ul>
+                  
+                  <h3>Link</h3>
+                  <ul>
+                      <li><a href="http://github.com/cdmuhs/cRaggy">project repo on GitHub</a></li>                      
+                  </ul>
                   
                     
-                    <h4 class = "text-uppercase">Statistics and Data Science Experience</h4>
-                    <ul>
-                    <li>Experiment design, hypothesis testing, quantitative analysis, statistical modeling</li>
-                        <li>Developing system requirements</li>
-                        <li>Familiar with data warehousing systems and architectures</li>
-                        <li>Completed five courses Coursera Data Science Specialization: Data Scientist's Toolbox, R Programming, Getting and Cleaning Data, Developing Data Products, Practical Machine Learning</li>
-                        <li>Graduate level coursework in statistics, econometrics, and forecasting</li>
-                    </ul>
-        
-                  <h4 class="text-uppercase">Skills</h4>
-                  <ul>
-                    <li><strong>Programming, databases, analysis:</strong> R, SQL, Python, SPSS</li>
-                    <li><strong>Visualization:</strong> ggplot, D3.js, Power BI, Tableau</li>
-                    <li><strong>Mapping:</strong> ArcGIS, QGIS, Leaflet</li>
-                    <li><strong>Public speaking:</strong> Presented at conferences, professional societies, and project meetings</li>
-                    <li><strong>Project management:</strong> Scopes, schedules, earned value analysis, invoicing</li>
-                  </ul>
-                 <h4 class="text-uppercase">Education</h4>
-                  <ul>
-                    <li>Portland State University: Ph.D. coursework completed in Civil & Environmental Engineering, 2015</li>
-                      <li>Portland State University: M.S., Civil & Environmental Engineering, 2013</li>
-                    <li>Penn State University: B.S., Civil & Environmental Engineering, 2009</li>
-                  </ul>
-                
-                    <h4 class="text-uppercase">Other Interests</h4>
-                  <ul>
-                    <li>Cycling</li>
-                    <li>Woodworking</li>
-                    <li>Calligraphy</li>
-                    <li>Donnie the Cat</li>
-                  </ul>
                   
                 </div>
               </div>
